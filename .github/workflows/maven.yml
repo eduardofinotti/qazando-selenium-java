@@ -29,7 +29,11 @@ jobs:
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         sudo apt install ./google-chrome*.deb
 
+    - uses: nanasess/setup-chromedriver@v1
+    - run: |
+        export DISPLAY=:99
+        chromedriver --url-base=/wd/hub &
+        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+
     - name: Build with Maven
       run: mvn test
-      
-      

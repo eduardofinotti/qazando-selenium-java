@@ -1,19 +1,17 @@
 package runner;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {},
         features = "src/test/resources/features",
-        tags = {"@enviar-mensagem-sucesso"},
+        tags = "@cadastro-sucesso",
         glue = {"steps"}
 )
 public class RunCucumberTest {

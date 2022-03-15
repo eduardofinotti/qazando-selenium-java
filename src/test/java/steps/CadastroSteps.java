@@ -1,7 +1,8 @@
 package steps;
 
-import cucumber.api.java.pt.Então;
-import cucumber.api.java.pt.Quando;
+
+import io.cucumber.java.pt.Então;
+import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import pages.CadastroPage;
