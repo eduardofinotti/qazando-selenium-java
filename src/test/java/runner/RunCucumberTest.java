@@ -22,7 +22,7 @@ public class RunCucumberTest {
      
     @BeforeClass
     public static void start(){
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
     }
 
     @AfterClass
