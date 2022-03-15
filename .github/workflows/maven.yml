@@ -24,15 +24,15 @@ jobs:
         distribution: 'adopt'
         cache: maven
     
-    - name: Install Google Chrome 
+    - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo apt install ./google-chrome*.deb
+            chmod +x ./scripts/InstallChrome.sh
+            ./scripts/InstallChrome.sh 
 
     - name: driver
       uses: nanasess/setup-chromedriver@master
 
     - name: tests
-      run: mvn test
+      run: mvn test --file pom.xml
       
       
