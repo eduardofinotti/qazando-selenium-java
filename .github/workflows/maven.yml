@@ -32,9 +32,6 @@ jobs:
     - name: driver
       uses: nanasess/setup-chromedriver@master
 
-    - name: Build with Maven
-      run: mvn test cluecumber-report:reporting
-      
     - name: tests
       run: mvn test
       
