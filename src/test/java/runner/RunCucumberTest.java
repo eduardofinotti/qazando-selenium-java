@@ -7,6 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -16,11 +17,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 )
 public class RunCucumberTest {
 
+    static ChromeOptions opt = new ChromeOptions();
+
     public static WebDriver driver;
      
     @BeforeClass
     public static void start(){
-        driver = new ChromeDriver();
+        opt.addArguments("headless");
+        driver = new ChromeDriver(opt);
     }
 
     @AfterClass
