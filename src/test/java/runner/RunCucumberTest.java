@@ -19,8 +19,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class RunCucumberTest {
 
     public static WebDriver driver;
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+     
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    options.addArguments("--headless");
 
     @BeforeClass
     public static void start(){
