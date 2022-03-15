@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        plugin = {"json:target/reports/cucumberReport.json", "html:target/report/"},
         features = "src/test/resources/features",
         tags = "@cadastro-sucesso",
         glue = {"steps"}
