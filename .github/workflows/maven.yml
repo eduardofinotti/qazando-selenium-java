@@ -29,10 +29,7 @@ jobs:
             chmod +x ./scripts/InstallChrome.sh
             ./scripts/InstallChrome.sh 
 
-    - name: driver
-      uses: nanasess/setup-chromedriver@master
-
-    - name: tests
-      run: mvn test --file pom.xml
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
       
       
